@@ -1,0 +1,17 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let link of links">
+    <mat-expansion-panel-header>
+      {{ link.name }}
+    </mat-expansion-panel-header>
+
+    <mat-nav-list>
+      <a
+        mat-list-item
+        *ngFor="let sublink of link.sublinks"
+        [routerLink]="link.route"
+      >
+        {{ sublink }}
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+</mat-accordion>
